@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Player/Footsteps.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Audio/Step.wav" type="AudioStream" id=3]
+[ext_resource path="res://Player/UI/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/dino-eat.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/ding.wav" type="AudioStream" id=6]
+
+[sub_resource type="CylinderShape" id=1]
+height = 2.5
+
+[sub_resource type="Animation" id=2]
+resource_name = "Walk"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 2.8, 0 ), Vector3( -0.1, 2.9, 0 ), Vector3( 0, 2.8, 0 ), Vector3( 0.1, 2.9, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Footsteps")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_footstep"
+}, {
+"args": [  ],
+"method": "play_footstep"
+} ]
+}
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 1.58175
+height = 1.6
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+body_nodepath = NodePath("Body")
+camera_nodepath = NodePath("Camera")
+animation_nodepath = NodePath("WalkAnimationPlayer")
+ui_nodepath = NodePath("HUD")
+interact_area_nodepath = NodePath("InteractArea")
+
+[node name="Body" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+far = 500.0
+
+[node name="Listener" type="Listener" parent="Camera"]
+
+[node name="Collider" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+shape = SubResource( 1 )
+
+[node name="WalkAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Walk"
+anims/Walk = SubResource( 2 )
+
+[node name="Footsteps" type="Spatial" parent="."]
+script = ExtResource( 2 )
+
+[node name="Footstep" type="AudioStreamPlayer3D" parent="Footsteps"]
+stream = ExtResource( 3 )
+unit_db = -10.0
+pitch_scale = 1.5
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+gameover_sound_path = NodePath("../GameOverSound")
+collect_sound_path = NodePath("../CollectSound")
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -20.0
+
+[node name="InteractArea" type="Area" parent="."]
+gravity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractArea"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0 )
+shape = SubResource( 3 )

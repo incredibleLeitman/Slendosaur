@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/dino-roar-02.wav-96b26c60e5b27094944f1a870608fe6e.sample"
+
+[deps]
+
+source_file="res://Sounds/dino-roar-02.wav"
+dest_files=[ "res://.import/dino-roar-02.wav-96b26c60e5b27094944f1a870608fe6e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

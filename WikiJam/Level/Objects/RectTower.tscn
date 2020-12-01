@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Level/Objects/LargeWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level/Objects/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Level/Objects/Roof.tscn" type="PackedScene" id=3]
+
+[node name="RectTower" type="Spatial"]
+
+[node name="LargeWall" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.1343, 0, 0 )
+
+[node name="LargeWall7" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.1343, 12, 0 )
+
+[node name="LargeWall5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134278, 12, 14.2772 )
+
+[node name="LargeWall2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.2347, 0, 0 )
+
+[node name="LargeWall6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.2347, 12, 0 )
+
+[node name="LargeWall8" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 12, -14.2661 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 10, 0, -14.1777 )
+
+[node name="Wall10" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 10, 0, 13.8908 )
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 10, 6, -14.1777 )
+
+[node name="Wall9" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 10, 6, 13.8908 )
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -10, 6, -14.1777 )
+
+[node name="Wall8" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -10, 6, 13.8908 )
+
+[node name="Wall4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -10, 0, -14.1777 )
+
+[node name="Wall7" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -10, 0, 13.8908 )
+
+[node name="Wall5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 0, 6, -14.1777 )
+
+[node name="Wall6" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 0, 6, 13.8908 )
+
+[node name="Roof" parent="." instance=ExtResource( 3 )]
+transform = Transform( 3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, 0, 24, 0 )

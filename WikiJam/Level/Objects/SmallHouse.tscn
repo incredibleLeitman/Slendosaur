@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Level/Objects/Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level/Objects/Roof.tscn" type="PackedScene" id=2]
+
+[node name="SmallHouse" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 0 )
+
+[node name="Wall" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.33189, 0, -4.69666 )
+
+[node name="Wall3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, 9 )
+
+[node name="Wall6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 9 )
+
+[node name="Wall2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52836, 0, 4.64483 )
+
+[node name="Wall7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4.80324 )
+
+[node name="Roof" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.2, 0, 0, 0, 2, 0, 0, 0, 2.2, 0, 6, 0 )

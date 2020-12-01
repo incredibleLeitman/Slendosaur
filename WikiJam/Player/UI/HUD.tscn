@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/UI/HUD.gd" type="Script" id=1]
+
+[node name="HUD" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+popup_nodepath = NodePath("Popup")
+container_path = NodePath("GridContainer")
+
+[node name="Popup" type="Popup" parent="."]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelFail" type="Panel" parent="Popup"]
+modulate = Color( 0.996078, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelWon" type="Panel" parent="Popup"]
+modulate = Color( 0.0313726, 0, 0.996078, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Container" type="Control" parent="Popup/CenterContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="LabelFail" type="Label" parent="Popup/CenterContainer/Container"]
+margin_left = 10.0
+margin_top = -24.0
+margin_right = 80.0
+margin_bottom = 24.0
+text = " You died!
+
+Game over"
+
+[node name="LabelWon" type="Label" parent="Popup/CenterContainer/Container"]
+margin_left = 10.0
+margin_top = -24.0
+margin_right = 92.0
+margin_bottom = 24.0
+text = "Gratulations!
+
+  You Won!"
+
+[node name="Button" type="Button" parent="Popup/CenterContainer/Container"]
+margin_left = -33.0
+margin_top = 49.0
+margin_right = 120.0
+margin_bottom = 126.0
+text = "play again"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 150.0
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 405.248
+margin_top = 613.044
+margin_right = 615.248
+margin_bottom = 658.044
+rect_min_size = Vector2( 250, 45 )
+step = 1.0
+value = 100.0
+[connection signal="pressed" from="Popup/CenterContainer/Container/Button" to="." method="_on_Button_pressed"]
